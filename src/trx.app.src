@@ -1,0 +1,17 @@
+{application, trx,
+ [{description, "A rebar plugin to convert test output to visual studio's trx format"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications,
+   [kernel,
+    stdlib,
+    uuid,
+    xmerl
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {maintainers, ["Fred Hebert"]},
+  {licenses, ["Apache 2.0"]},
+  {links, [{"Github", "https://github.com/ferd/trx/"}]}
+ ]}.
