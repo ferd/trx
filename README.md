@@ -9,7 +9,7 @@ Use
 Add the plugin to your rebar config:
 
     {plugins, [
-        {trx, ".*", {git, "git@github.com:ferd/trx.git", {branch, "master"}}}
+        {trx, ".*", {git, "https://github.com/ferd/trx.git", {branch, "master"}}}
     ]}.
 
 Then just call your plugin directly in an existing application to generate a report based on the latest common test run:
