@@ -180,8 +180,8 @@ clean(HtmlLog) ->
 
 outcome({_,0,0,_}) -> "Passed"; % full test run, {Pass, Fail, Skip:Auto, Skip:User}
 outcome(<<"ok">>) -> "Passed";
-outcome(<<"skipped", _Rest/binary>>) -> "Warning";     %user controlled skip
-outcome(<<"auto_skipped",_Rest/binary>>) -> "Failed";  %likely an init_per_xxx crash
+outcome(<<"skipped", _Rest/binary>>) -> "Warning";     % user controlled skip
+outcome(<<"auto_skipped", _Rest/binary>>) -> "Failed";  % likely an init_per_xxx crash
 outcome(_) -> "Failed".
 
 xml_tests(_Global, Cases) ->
