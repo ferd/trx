@@ -35,7 +35,11 @@ parse(Log) ->
             || Line <- re:split(Log, "^=", [unicode, multiline]),
                 nomatch =:= string:prefix(Line, "=="),
                 not string:equal(Line, "")],
-    group_log_data(Data).
+    group_log_data([case T of
+                        {K} -> {K, <<"">>}; % default
+                        {K,V} -> {K, V}
+                    end || T <- Data]).
+
 
 generate_trx(Data, RunDir) ->
     {Global, AllCases} = merge_data(Data),
