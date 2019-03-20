@@ -8,7 +8,7 @@ Use
 
 Add the plugin to your rebar config:
 
-    {plugins, [
+    {project_plugins, [
         {trx, ".*", {git, "https://github.com/ferd/trx.git", {branch, "master"}}}
     ]}.
 
@@ -34,5 +34,4 @@ TODO
 
 - Eunit integration
 - PropEr integration (is it even possible?)
-- Make sure it is more solid than it is right now
 - Code coverage?
