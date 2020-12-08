@@ -169,7 +169,8 @@ add_id(List) ->
 %% @private This is very hacky
 get_output(Dir, M=#{logfile := Filename}) ->
     {ok, Log} = file:read_file(filename:join([Dir, Filename])),
-    {match, Output} = re:run(Log, "=== Started at.*<br />(.*)<a name=\"end\"",
+    LogWithoutZero = binary:replace(Log, <<0>>, <<>>, [global]),
+    {match, Output} = re:run(LogWithoutZero, "=== Started at.*<br />(.*)<a name=\"end\"",
                              [global,dotall,multiline,unicode, {capture, all_but_first, list}]),
     M#{output => clean(Output)};
 get_output(_Dir, M=#{result := <<"skipped:", _/binary>>}) ->
